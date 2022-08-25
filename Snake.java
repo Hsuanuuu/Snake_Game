@@ -16,6 +16,11 @@ public class Snake {
         snakeBody.add(new Node(20, 0));
     }
 
+    public ArrayList<Node> getSnakeBody(){
+        return snakeBody;
+    }
+
+
     public void drawSnake(Graphics g) {
         g.setColor(Color.orange);
         for (Node n : snakeBody) {
