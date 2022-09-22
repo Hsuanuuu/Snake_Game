@@ -23,7 +23,27 @@ public class Snake {
 
     public void drawSnake(Graphics g) {
         g.setColor(Color.orange);
-        for (Node n : snakeBody) {
+        for (int i=0;i<snakeBody.size();i++) {
+            if(i==0){
+                g.setColor(Color.blue);
+            }
+            else {
+                g.setColor(Color.orange);
+            }
+
+            Node n=snakeBody.get(i);
+            if(n.x>=Main.width){
+                n.x=0;
+            }
+            else if(n.x<0){
+                n.x=Main.width-Main.CELL_SIZE;
+            }
+            else  if(n.y>=Main.height){
+                n.y=0;
+            }
+            else if(n.y<0){
+                n.y=Main.width-Main.CELL_SIZE;
+            }
             g.fillOval(n.x, n.y, Main.CELL_SIZE,Main.CELL_SIZE);
         }
 
